@@ -23,11 +23,11 @@ const roadmap = [
     title: 'Automation Basics',
     status: 'in-progress',
     items: [
-      { label: 'JavaScript for automation',        done: true  },
-      { label: 'Playwright (hands-on projects)',   done: true  },
-      { label: 'Python scripting basics',          done: false },
-      { label: 'API testing concepts',             done: false },
-      { label: 'Test automation frameworks',       done: false },
+      { label: 'Python scripting basics',        done: false },
+      { label: 'Playwright (hands-on projects)',  done: true  },
+      { label: 'API testing concepts',            done: false },
+      { label: 'Test automation frameworks',      done: false },
+      { label: 'Selenium basics',                 done: false },
     ],
   },
   {
