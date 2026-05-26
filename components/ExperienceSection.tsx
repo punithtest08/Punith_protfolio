@@ -8,7 +8,7 @@ const timeline = [
   {
     company: 'Juspay Technologies Pvt Ltd',
     title: 'HR Admin Associate (Consultant)',
-    period: '2024 – Present',
+    period: 'Jan 2026 – Present',
     type: 'Fintech · Enterprise',
     color: 'cyan',
     impact: '1000+ employees coordinated',
@@ -25,7 +25,7 @@ const timeline = [
   {
     company: 'Dream Aluminium Interior',
     title: 'HR Executive',
-    period: '2023 – 2024',
+    period: 'Jun 2024 – Jun 2025',
     type: 'Startup · Operations',
     color: 'violet',
     impact: '50% faster onboarding process',
@@ -38,9 +38,22 @@ const timeline = [
     ],
   },
   {
+    company: 'Varun Motors Pvt Ltd',
+    title: 'HR Recruiter (Contract)',
+    period: 'Jul 2025 – Sep 2025',
+    type: 'Automotive · Coordination',
+    color: 'blue',
+    impact: 'Candidate pipeline built',
+    bullets: [
+      'Executed full-cycle recruitment coordination across multiple roles',
+      'Built and maintained structured candidate pipeline tracking',
+      'Coordinated interview scheduling and hiring logistics',
+    ],
+  },
+  {
     company: 'Saphire Motors Pvt Ltd',
     title: 'HR Executive',
-    period: '2022 – 2023',
+    period: 'Sep 2025 – Dec 2025',
     type: 'Automotive · Operations',
     color: 'emerald',
     impact: 'Full statutory compliance',
@@ -49,19 +62,6 @@ const timeline = [
       'Maintained employee records and system data with high accuracy',
       'Ensured PF/ESI statutory compliance and audit-ready documentation',
       'Optimized hiring coordination for faster time-to-fill',
-    ],
-  },
-  {
-    company: 'Varun Motors Pvt Ltd',
-    title: 'HR Recruiter (Contract)',
-    period: '2021 – 2022',
-    type: 'Automotive · Coordination',
-    color: 'blue',
-    impact: 'Candidate pipeline built',
-    bullets: [
-      'Executed full-cycle recruitment coordination across multiple roles',
-      'Built and maintained structured candidate pipeline tracking',
-      'Coordinated interview scheduling and hiring logistics',
     ],
   },
 ];
