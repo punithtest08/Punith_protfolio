@@ -25,13 +25,29 @@ export default function ContactSection() {
   const ref = useScrollReveal();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate send
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', message: '' });
+    setSending(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setSent(true);
+        setForm({ name: '', email: '', message: '' });
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        alert('Failed to send. Please email directly at puniths0810@gmail.com');
+      }
+    } catch {
+      alert('Failed to send. Please email directly at puniths0810@gmail.com');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -105,10 +121,11 @@ export default function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="btn-magnetic w-full flex items-center justify-center gap-2.5 rounded-2xl bg-cyan-500 py-3.5 text-sm font-semibold text-slate-950 shadow-glow hover:bg-cyan-400 transition"
+                  disabled={sending}
+                  className="btn-magnetic w-full flex items-center justify-center gap-2.5 rounded-2xl bg-cyan-500 py-3.5 text-sm font-semibold text-slate-950 shadow-glow hover:bg-cyan-400 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {sending ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
