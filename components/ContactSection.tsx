@@ -148,7 +148,7 @@ export default function ContactSection() {
                 <p className="text-sm font-semibold text-emerald-400">Available for Opportunities</p>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Open to full-time, contract, and consulting roles in HR operations, analytics, fintech, and AI product companies.
+                Open to full-time roles in HR operations, analytics, and QA entry positions.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-500 font-mono">
                 <MapPin className="h-3.5 w-3.5" />
