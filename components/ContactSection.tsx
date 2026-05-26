@@ -26,25 +26,28 @@ export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
+    setError(null);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
+      const data = await res.json();
       if (res.ok) {
         setSent(true);
         setForm({ name: '', email: '', message: '' });
         setTimeout(() => setSent(false), 5000);
       } else {
-        alert('Failed to send. Please email directly at puniths0810@gmail.com');
+        setError(data.error ?? 'Failed to send. Please email puniths0810@gmail.com');
       }
-    } catch {
-      alert('Failed to send. Please email directly at puniths0810@gmail.com');
+    } catch (err) {
+      setError('Network error. Please email puniths0810@gmail.com');
     } finally {
       setSending(false);
     }
@@ -119,6 +122,11 @@ export default function ContactSection() {
                     className="w-full rounded-2xl bg-black/30 border border-white/8 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400/40 transition font-mono resize-none"
                   />
                 </div>
+                {error && (
+                  <p className="text-sm text-red-400 font-mono bg-red-400/8 border border-red-400/20 rounded-2xl px-4 py-3">
+                    {error}
+                  </p>
+                )}
                 <button
                   type="submit"
                   disabled={sending}

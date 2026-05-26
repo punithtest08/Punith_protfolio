@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -9,17 +11,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
     }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
-      to: 'puniths0810@gmail.com',
+    const { error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: process.env.CONTACT_EMAIL ?? 'puniths0810@gmail.com',
       replyTo: email,
       subject: `New message from ${name} — Portfolio`,
       html: `
@@ -44,9 +38,15 @@ export async function POST(req: Request) {
       `,
     });
 
+    if (error) {
+      console.error('Resend error:', JSON.stringify(error));
+      return NextResponse.json({ error: error.message ?? 'Failed to send message.' }, { status: 500 });
+    }
+
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch (error) {
-    console.error('Email error:', error);
-    return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : 'Unknown error';
+    console.error('Contact error:', msg);
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
