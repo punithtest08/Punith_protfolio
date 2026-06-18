@@ -9,6 +9,7 @@ const contactLinks = [
   { icon: Github,   label: 'GitHub',   value: 'punithtest08',                    href: 'https://github.com/punithtest08',               color: 'text-slate-300' },
   { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/punith-s-25b98a2b7', href: 'https://www.linkedin.com/in/punith-s-25b98a2b7/', color: 'text-blue-400'  },
   { icon: Mail,     label: 'Email',    value: 'puniths0810@gmail.com',            href: 'mailto:puniths0810@gmail.com',                  color: 'text-cyan-400'  },
+  { icon: Mail,     label: 'Email (HR)',value: 'punithshr2708@gmail.com',         href: 'mailto:punithshr2708@gmail.com',                color: 'text-cyan-400'  },
 ];
 
 const openFor = [
@@ -45,10 +46,10 @@ export default function ContactSection() {
         setForm({ name: '', email: '', message: '' });
         setTimeout(() => setSent(false), 5000);
       } else {
-        setError(data.error ?? 'Failed to send. Please email puniths0810@gmail.com');
+        setError(data.error ?? 'Failed to send. Please email punithshr2708@gmail.com');
       }
     } catch {
-      setError('Network error. Please email puniths0810@gmail.com');
+      setError('Network error. Please email punithshr2708@gmail.com');
     } finally {
       setSending(false);
     }
