@@ -187,7 +187,6 @@ export default function HeroSection() {
               <a
                 href="/punith s.pdf"
                 download="Punith_S_Resume.pdf"
-                download
                 className="btn-magnetic inline-flex items-center gap-2.5 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow hover:bg-cyan-400"
               >
                 <Download className="h-4 w-4" />
