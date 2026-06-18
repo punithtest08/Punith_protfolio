@@ -1,6 +1,16 @@
 'use client';
 
-import { Github, Linkedin, Zap } from 'lucide-react';
+import { Github, Linkedin, Briefcase } from 'lucide-react';
+
+const footerLinks = [
+  { label: 'About',       href: '#about'       },
+  { label: 'Analytics',  href: '#analytics'   },
+  { label: 'Projects',   href: '#projects'    },
+  { label: 'Leadership', href: '#leadership'  },
+  { label: 'Skills',     href: '#skills'      },
+  { label: 'Experience', href: '#experience'  },
+  { label: 'Contact',    href: '#contact'     },
+];
 
 export default function FooterSection() {
   return (
@@ -8,20 +18,21 @@ export default function FooterSection() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
 
       <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-6">
+
         {/* Logo */}
         <div className="flex items-center gap-2.5">
           <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-violet-500">
-            <Zap className="h-3.5 w-3.5 text-white" />
+            <Briefcase className="h-3.5 w-3.5 text-white" />
           </div>
           <span className="font-semibold text-white text-sm">Punith S</span>
-          <span className="text-xs text-slate-600 font-mono">· HR Operations & AI Systems</span>
+          <span className="text-xs text-slate-600 font-mono">· HR Operations & People Analytics</span>
         </div>
 
         {/* Links */}
-        <nav className="flex items-center gap-5 text-xs text-slate-500 font-mono">
-          {['#about', '#projects', '#analytics', '#qa-journey', '#skills', '#github', '#experience', '#contact'].map((href) => (
-            <a key={href} href={href} className="hover:text-slate-300 transition capitalize">
-              {href.replace('#', '')}
+        <nav className="flex flex-wrap justify-center items-center gap-4 text-xs text-slate-500 font-mono">
+          {footerLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-slate-300 transition">
+              {link.label}
             </a>
           ))}
         </nav>
@@ -32,6 +43,7 @@ export default function FooterSection() {
             href="https://github.com/punithtest08"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
             className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/8 text-slate-400 hover:text-white hover:border-white/15 transition"
           >
             <Github className="h-4 w-4" />
@@ -40,6 +52,7 @@ export default function FooterSection() {
             href="https://www.linkedin.com/in/punith-s-25b98a2b7/"
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn"
             className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 border border-white/8 text-slate-400 hover:text-blue-400 hover:border-blue-400/30 transition"
           >
             <Linkedin className="h-4 w-4" />

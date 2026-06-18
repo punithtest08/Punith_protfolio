@@ -2,23 +2,24 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Terminal, TrendingUp, Users, BarChart3, CheckSquare, Workflow, Linkedin, GitBranch } from 'lucide-react';
+import { ArrowRight, Download, Users, CheckSquare, TrendingUp, BarChart3, Workflow, Briefcase, Linkedin, GitBranch } from 'lucide-react';
 import NeuralCanvas from './NeuralCanvas';
 
 const ROLES = [
-  'HR Specialist | Aspiring QA Engineer',
-  'Workflow & Operations Professional',
-  'QA-Focused Operations Analyst',
-  'Process Validation Specialist',
-  'HR & QA Operations Analyst',
+  'HR Operations Analyst',
+  'People Operations Professional',
+  'HR Analytics Specialist',
+  'Process Excellence Professional',
+  'HR Technology Enthusiast',
 ];
 
 const kpiCards = [
-  { icon: Users,       label: 'Employees Managed',      value: '1000+',      color: 'cyan',    delay: 0    },
-  { icon: CheckSquare, label: 'Process Accuracy',        value: '100%',       color: 'emerald', delay: 0.1  },
-  { icon: TrendingUp,  label: 'Faster Onboarding',       value: '50%',        color: 'violet',  delay: 0.2  },
-  { icon: BarChart3,   label: 'Ops Dashboards Built',    value: '10+',        color: 'blue',    delay: 0.3  },
-  { icon: Workflow,    label: 'Workflow Systems',         value: '5+ Built',   color: 'cyan',    delay: 0.4  },
+  { icon: Users,       label: 'Employees Supported',    value: '1000+',    color: 'cyan',    delay: 0    },
+  { icon: CheckSquare, label: 'HRMS Data Accuracy',     value: '100%',     color: 'emerald', delay: 0.1  },
+  { icon: TrendingUp,  label: 'Faster Onboarding',      value: '50%',      color: 'violet',  delay: 0.2  },
+  { icon: BarChart3,   label: 'Dashboards Built',       value: '10+',      color: 'blue',    delay: 0.3  },
+  { icon: Workflow,    label: 'Business Systems Built',  value: '5+',       color: 'cyan',    delay: 0.4  },
+  { icon: Briefcase,   label: 'Years Experience',       value: '2+',       color: 'emerald', delay: 0.5  },
 ];
 
 const colorMap: Record<string, string> = {
@@ -62,30 +63,33 @@ function StatusWidget() {
     <div className="glass rounded-3xl border border-white/8 p-5 space-y-4">
       <div className="flex items-center justify-between">
         <span className="text-xs font-mono text-slate-500 uppercase tracking-widest">Current Status</span>
-        <span className="status-online text-xs text-emerald-400 font-mono">Active</span>
+        <span className="status-online text-xs text-emerald-400 font-mono">Available</span>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-2xl bg-black/30 p-3 border border-white/5">
           <p className="text-xs text-slate-500 font-mono">HR Ops</p>
-          <p className="mt-1 text-sm font-bold text-white">1.7+ yrs</p>
+          <p className="mt-1 text-sm font-bold text-white">2+ yrs</p>
         </div>
         <div className="rounded-2xl bg-black/30 p-3 border border-white/5">
-          <p className="text-xs text-slate-500 font-mono">QA Focus</p>
-          <p className="mt-1 text-sm font-bold text-cyan-400">Learning</p>
+          <p className="text-xs text-slate-500 font-mono">HR Tech</p>
+          <p className="mt-1 text-sm font-bold text-cyan-400">Active</p>
         </div>
       </div>
 
       <div className="space-y-2">
         {[
-          { label: 'Workflow Coordination', status: 'Strong' },
-          { label: 'Process Validation',    status: 'Strong' },
-          { label: 'QA Engineering',        status: 'Growing' },
-          { label: 'Automation Basics',     status: 'Growing' },
+          { label: 'Workforce Operations',  status: 'Expert'   },
+          { label: 'HR Analytics',          status: 'Strong'   },
+          { label: 'Process Excellence',    status: 'Strong'   },
+          { label: 'HR Technology',         status: 'Growing'  },
         ].map((item) => (
           <div key={item.label} className="flex items-center justify-between text-xs">
             <span className="text-slate-400 font-mono">{item.label}</span>
-            <span className={`font-mono font-semibold ${item.status === 'Strong' ? 'text-emerald-400' : 'text-amber-400'}`}>
+            <span className={`font-mono font-semibold ${
+              item.status === 'Expert' ? 'text-cyan-400' :
+              item.status === 'Strong' ? 'text-emerald-400' : 'text-amber-400'
+            }`}>
               {item.status}
             </span>
           </div>
@@ -117,7 +121,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2.5 rounded-full border border-cyan-400/20 bg-cyan-400/8 px-4 py-2 text-sm text-cyan-300"
             >
               <GitBranch className="h-3.5 w-3.5" />
-              <span className="font-mono">HR Specialist → QA Engineering</span>
+              <span className="font-mono">HR Operations · People Analytics · Process Excellence</span>
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
             </motion.div>
 
@@ -128,14 +132,14 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.06] tracking-tight text-white">
-                Building{' '}
-                <span className="grad-cyan">Reliable</span>
+                Driving{' '}
+                <span className="grad-cyan">Workforce</span>
                 <br />
-                Systems with{' '}
+                Operations &{' '}
                 <br className="hidden sm:block" />
-                <span className="grad-violet">Operations</span>
+                <span className="grad-violet">People</span>
                 <br />
-                & QA Thinking
+                Excellence
               </h1>
             </motion.div>
 
@@ -146,7 +150,7 @@ export default function HeroSection() {
               transition={{ delay: 0.3 }}
               className="flex items-center gap-3 text-base"
             >
-              <Terminal className="h-4 w-4 text-slate-500 flex-shrink-0" />
+              <Briefcase className="h-4 w-4 text-slate-500 flex-shrink-0" />
               <TypingRole />
             </motion.div>
 
@@ -159,12 +163,13 @@ export default function HeroSection() {
             >
               {[
                 'HR Operations',
-                'QA Mindset',
-                'Workflow Automation',
-                'Process Validation',
-                'Python Basics',
-                'DevOps Basics',
-                'System Monitoring',
+                'People Analytics',
+                'Workforce Planning',
+                'Employee Experience',
+                'Process Excellence',
+                'HR Technology',
+                'UAT Testing',
+                'Operational Dashboards',
               ].map((tag) => (
                 <span key={tag} className="rounded-full border border-white/10 bg-white/4 px-3 py-1 text-xs text-slate-300 font-mono">
                   {tag}
@@ -180,20 +185,26 @@ export default function HeroSection() {
               className="flex flex-wrap gap-3"
             >
               <a
-                href="#projects"
+                href="/punith s.pdf"
+                download="Punith_S_Resume.pdf"
+                download
                 className="btn-magnetic inline-flex items-center gap-2.5 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow hover:bg-cyan-400"
               >
-                View Projects
+                <Download className="h-4 w-4" />
+                Download Resume
+              </a>
+              <a
+                href="#experience"
+                className="btn-magnetic inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm text-slate-100 hover:border-cyan-400/30 hover:bg-white/8"
+              >
+                View Experience
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="https://github.com/punithtest08"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-magnetic inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/5 px-6 py-3 text-sm text-slate-100 hover:border-cyan-400/30 hover:bg-white/8"
+                href="#projects"
+                className="btn-magnetic inline-flex items-center gap-2.5 rounded-full border border-violet-400/25 bg-violet-400/8 px-6 py-3 text-sm text-violet-300 hover:bg-violet-400/12"
               >
-                <Github className="h-4 w-4" />
-                GitHub
+                View Projects
               </a>
               <a
                 href="https://www.linkedin.com/in/punith-s-25b98a2b7/"
@@ -203,12 +214,6 @@ export default function HeroSection() {
               >
                 <Linkedin className="h-4 w-4" />
                 LinkedIn
-              </a>
-              <a
-                href="#contact"
-                className="btn-magnetic inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/4 px-6 py-3 text-sm text-slate-300 hover:border-white/20"
-              >
-                Contact Me
               </a>
             </motion.div>
           </div>
@@ -222,7 +227,7 @@ export default function HeroSection() {
           >
             <div className="grid grid-cols-1 gap-3">
               {kpiCards.map((card) => {
-                const Icon  = card.icon;
+                const Icon   = card.icon;
                 const colors = colorMap[card.color];
                 return (
                   <motion.div
@@ -244,7 +249,7 @@ export default function HeroSection() {
               })}
             </div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}>
               <StatusWidget />
             </motion.div>
           </motion.div>
@@ -254,7 +259,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          transition={{ delay: 1.4 }}
           className="mt-16 flex justify-center"
         >
           <a href="#about" className="flex flex-col items-center gap-2 text-slate-600 hover:text-slate-400 transition group">

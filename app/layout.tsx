@@ -2,13 +2,28 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Punith S — HR Specialist | Aspiring QA Engineer',
-  description: 'HR Operations professional transitioning into QA Engineering. Experienced in workflow coordination, process validation, operational systems, and automation. Based in Bengaluru.',
-  keywords: ['HR Operations', 'QA Engineer', 'Workflow Automation', 'Process Validation', 'Operations Analyst', 'QA Testing', 'Bengaluru'],
+  title: 'Punith S — HR Operations Analyst | People Operations | HR Analytics',
+  description: 'HR Operations Analyst with 2+ years supporting 1000+ employees. Expertise in People Operations, HR Analytics, Workforce Planning, Employee Experience, HR Technology, and Process Excellence. Based in Bengaluru.',
+  keywords: [
+    'HR Operations Analyst',
+    'People Operations',
+    'HR Analytics',
+    'HR Technology',
+    'Workforce Planning',
+    'Employee Experience',
+    'HR Dashboard',
+    'People Analytics',
+    'HR Operations Consultant',
+    'Workplace Operations',
+    'HR Process Excellence',
+    'Operational Intelligence',
+    'HRMS',
+    'Bengaluru',
+  ],
   authors: [{ name: 'Punith S' }],
   openGraph: {
-    title: 'Punith S — HR Specialist | Aspiring QA Engineer',
-    description: 'HR Operations professional transitioning into QA Engineering. Workflow coordination, process validation, and automation systems.',
+    title: 'Punith S — HR Operations Analyst | People Operations | HR Analytics',
+    description: 'HR Operations Analyst supporting workforce operations, employee experience, and operational intelligence through data-driven decision making and scalable systems.',
     type: 'website',
   },
 };

@@ -2,104 +2,139 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ChevronDown, ChevronUp, ShieldCheck, MonitorCheck, TicketCheck, Workflow, DollarSign } from 'lucide-react';
+import { Github, ChevronDown, ChevronUp, BarChart3, Network, DollarSign, MonitorCheck, ShieldCheck } from 'lucide-react';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const projects = [
   {
-    id: 'veribuddy',
-    icon: ShieldCheck,
-    title: 'VeriBuddy AI',
-    category: 'QA & Verification Platform',
-    tagline: 'Workflow verification with operational validation & process monitoring',
+    id: 'hr-intelligence',
+    icon: BarChart3,
+    title: 'HR Intelligence Dashboard',
+    category: 'People Analytics',
+    tagline: 'Workforce analytics platform for data-driven HR decisions',
     color: 'cyan',
-    stack: ['Node.js', 'MongoDB', 'Express', 'Telegram API', 'Geolocation'],
-    description: 'An AI-assisted workflow verification platform focused on operational validation, process monitoring, and workflow accuracy. Implements admin-gated verification flows, trust scoring, anti-spam rate limiting, and automated re-verification — demonstrating QA-oriented system design.',
+    stack: ['React', 'Node.js', 'PostgreSQL', 'Chart.js', 'Google Sheets API'],
+    description: 'A workforce analytics platform providing actionable insights into headcount analysis, organizational structure, gender diversity, employee tenure, workforce distribution, and leadership reporting. Enables HR leadership to make data-driven workforce decisions.',
     metrics: [
-      { label: 'Verification Type',  value: 'Admin-gated'       },
-      { label: 'Validation System',  value: 'Trust Score'       },
-      { label: 'Rate Limiting',      value: 'Anti-spam'         },
-      { label: 'Re-verification',    value: 'Automated Flow'    },
+      { label: 'Analytics Type',   value: 'People Analytics'     },
+      { label: 'Reporting',        value: 'Leadership Reports'    },
+      { label: 'Data Coverage',    value: 'Full Workforce'        },
+      { label: 'Impact',           value: 'Data-driven Decisions' },
     ],
-    highlights: ['Step-by-step registration validation', 'Admin review & approval workflow', 'Report & auto-block system', 'Re-verification flow for flagged users', 'Rate limiting & spam prevention', 'Audit trail for all actions'],
+    highlights: [
+      'Headcount & org structure analysis',
+      'Gender diversity tracking',
+      'Employee tenure reporting',
+      'Workforce distribution maps',
+      'Leadership executive dashboards',
+      'Real-time data refresh',
+    ],
     github: 'https://github.com/punithtest08',
-    status: 'Deployed · Render',
+    status: 'HR Technology',
   },
   {
-    id: 'vms',
-    icon: MonitorCheck,
-    title: 'VMS — Visitor Management System',
-    category: 'Workflow Monitoring System',
-    tagline: 'Visitor tracking, approvals, monitoring & process coordination',
+    id: 'sna-dashboard',
+    icon: Network,
+    title: 'Social Network Analysis Dashboard',
+    category: 'People Analytics',
+    tagline: 'Organizational network analytics for workforce engagement visibility',
     color: 'violet',
-    stack: ['React', 'Node.js', 'PostgreSQL', 'JWT', 'Nodemailer', 'QR Codes'],
-    description: 'A workflow monitoring and operational coordination system for managing visitor lifecycles. Features role-based access control, QR-based check-in/out tracking, approval rules engine, blacklist management, attendance reporting, and automated cron-based cleanup — built with process validation at its core.',
+    stack: ['React', 'D3.js', 'Node.js', 'MongoDB', 'Network Graph APIs'],
+    description: 'An organizational network analytics platform visualizing team connectivity, employee collaboration patterns, influence networks, and cross-functional relationships. Provides HR and leadership with visibility into workforce engagement and team dynamics.',
     metrics: [
-      { label: 'Access Roles',       value: '4 Role Types'      },
-      { label: 'Check-in Method',    value: 'QR Tracking'       },
-      { label: 'Approval Engine',    value: 'Rules-based'       },
-      { label: 'Reporting',          value: 'Analytics Dashboard'},
+      { label: 'Analytics Type',   value: 'Network Analysis'      },
+      { label: 'Visualization',    value: 'Interactive Graphs'    },
+      { label: 'Focus',            value: 'Collaboration'         },
+      { label: 'Impact',           value: 'Engagement Visibility' },
     ],
-    highlights: ['Role-based access control', 'QR check-in/out tracking', 'Configurable approval rules', 'Blacklist & access management', 'Attendance & analytics dashboard', 'Automated data cleanup'],
-    github: 'https://github.com/punithtest08/VMS',
-    status: 'Deployed · Render',
-  },
-  {
-    id: 'ticketpro',
-    icon: TicketCheck,
-    title: 'Ticket Pro Controller',
-    category: 'Issue Tracking Platform',
-    tagline: 'Operational issue handling, session monitoring & process coordination',
-    color: 'emerald',
-    stack: ['React', 'TypeScript', 'Node.js', 'Playwright', 'WebSocket', 'Telegram Bot'],
-    description: 'A ticket management and workflow tracking platform designed for operational issue handling and process coordination. Features real-time WebSocket status updates, multi-session monitoring, session health panels, live log tracking, and automated Telegram alerts — reflecting QA-style system observability.',
-    metrics: [
-      { label: 'Monitoring',         value: 'Real-time WS'      },
-      { label: 'Sessions',           value: 'Up to 5'           },
-      { label: 'Alerts',             value: 'Telegram Bot'      },
-      { label: 'Automation',         value: 'Playwright CDP'    },
+    highlights: [
+      'Team connectivity mapping',
+      'Employee collaboration analysis',
+      'Influence network visualization',
+      'Cross-functional relationship tracking',
+      'Engagement pattern detection',
+      'Organizational health metrics',
     ],
-    highlights: ['Real-time WebSocket monitoring', 'Multi-session health panel', 'Live logs & status tracking', 'Automated alerts on state change', 'Session restart & recovery', 'Dynamic refresh intervals'],
     github: 'https://github.com/punithtest08',
-    status: 'Local · macOS',
-  },
-  {
-    id: 'nexticket',
-    icon: Workflow,
-    title: 'NexTicket',
-    category: 'Workflow Coordination Platform',
-    tagline: 'Task & workflow tracking with operational monitoring & execution management',
-    color: 'blue',
-    stack: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'AWS ECS', 'SQS', 'Terraform'],
-    description: 'A workflow coordination and operational monitoring platform built for high-concurrency environments. Uses Redis for atomic state management, SQS FIFO queues for ordered task processing, and AWS ECS for scalable execution — demonstrating infrastructure-level operational thinking.',
-    metrics: [
-      { label: 'Concurrency',        value: '100K+ users'       },
-      { label: 'State Management',   value: 'Redis Atomic'      },
-      { label: 'Task Queue',         value: 'SQS FIFO'          },
-      { label: 'Infrastructure',     value: 'Terraform IaC'     },
-    ],
-    highlights: ['Atomic inventory state management', 'FIFO task queue processing', 'Auto-scaling infrastructure', 'WAF & rate limiting', 'Payment workflow integration', 'Full infrastructure-as-code'],
-    github: 'https://github.com/punithtest08',
-    status: 'AWS · Production-ready',
+    status: 'People Analytics',
   },
   {
     id: 'payroll',
     icon: DollarSign,
-    title: 'Payroll Automation',
-    category: 'Automation Workflow System',
-    tagline: 'Automated payroll processing, validation & operational reporting',
-    color: 'amber',
-    stack: ['JavaScript', 'Node.js', 'React', 'APIs', 'Workflow Engine'],
-    description: 'An automation-focused payroll and reporting workflow system designed to streamline operational coordination and validation processes. Automates payroll calculations, data validation checks, compliance reporting, and operational dashboards — directly applying HR operations knowledge to engineering.',
+    title: 'Payroll Automation System',
+    category: 'HR Technology',
+    tagline: 'Automated payroll validation, compliance monitoring & workforce reporting',
+    color: 'emerald',
+    stack: ['JavaScript', 'Node.js', 'React', 'Google Sheets API', 'Workflow Engine'],
+    description: 'An automation-focused payroll and reporting workflow system designed to streamline operational coordination and validation processes. Automates payroll calculations, data validation checks, compliance reporting, and operational dashboards — directly applying HR operations expertise to technology.',
     metrics: [
-      { label: 'Automation Type',    value: 'Payroll Workflow'  },
-      { label: 'Validation',         value: 'Data Accuracy'     },
-      { label: 'Reporting',          value: 'Ops Dashboard'     },
-      { label: 'Compliance',         value: 'Audit-ready'       },
+      { label: 'Automation',       value: 'Payroll Workflow'      },
+      { label: 'Validation',       value: 'Data Accuracy'         },
+      { label: 'Reporting',        value: 'Ops Dashboard'         },
+      { label: 'Compliance',       value: 'Audit-ready'           },
     ],
-    highlights: ['Automated payroll calculations', 'Data validation & accuracy checks', 'Compliance reporting', 'Operational dashboard', 'Workflow coordination', 'Error detection & alerts'],
+    highlights: [
+      'Automated payroll calculations',
+      'Data validation & accuracy checks',
+      'Compliance reporting',
+      'Operational dashboard',
+      'Workflow coordination',
+      'Error detection & alerts',
+    ],
     github: 'https://github.com/punithtest08',
     status: 'In Development',
+  },
+  {
+    id: 'vms',
+    icon: MonitorCheck,
+    title: 'Visitor Management System',
+    category: 'Workplace Operations',
+    tagline: 'Enterprise-grade workplace operations platform with approval workflows',
+    color: 'blue',
+    stack: ['React', 'Node.js', 'PostgreSQL', 'JWT', 'Nodemailer', 'QR Codes'],
+    description: 'An enterprise workplace operations platform for managing visitor lifecycles. Features role-based access control, QR-based check-in/out tracking, configurable approval rules engine, blacklist management, attendance reporting, and automated data cleanup — built for operational excellence.',
+    metrics: [
+      { label: 'Access Roles',     value: '4 Role Types'          },
+      { label: 'Check-in Method',  value: 'QR Tracking'           },
+      { label: 'Approval Engine',  value: 'Rules-based'           },
+      { label: 'Reporting',        value: 'Analytics Dashboard'   },
+    ],
+    highlights: [
+      'Role-based access control',
+      'QR check-in/out tracking',
+      'Configurable approval rules',
+      'Blacklist & access management',
+      'Attendance & analytics dashboard',
+      'Automated data cleanup',
+    ],
+    github: 'https://github.com/punithtest08/VMS',
+    status: 'Deployed · Render',
+  },
+  {
+    id: 'veribuddy',
+    icon: ShieldCheck,
+    title: 'Workflow Verification Platform',
+    category: 'Business Systems',
+    tagline: 'Process validation and operational governance platform',
+    color: 'amber',
+    stack: ['Node.js', 'MongoDB', 'Express', 'Telegram API', 'Geolocation'],
+    description: 'A process validation and operational governance platform with admin-gated verification flows, trust scoring, anti-spam rate limiting, and automated re-verification — demonstrating systematic process monitoring and workflow accuracy principles.',
+    metrics: [
+      { label: 'Verification',     value: 'Admin-gated'           },
+      { label: 'Validation',       value: 'Trust Score'           },
+      { label: 'Rate Limiting',    value: 'Anti-spam'             },
+      { label: 'Re-verification',  value: 'Automated Flow'        },
+    ],
+    highlights: [
+      'Step-by-step process validation',
+      'Admin review & approval workflow',
+      'Report & auto-block system',
+      'Re-verification flow',
+      'Rate limiting & spam prevention',
+      'Audit trail for all actions',
+    ],
+    github: 'https://github.com/punithtest08',
+    status: 'Deployed · Render',
   },
 ];
 
@@ -222,13 +257,13 @@ export default function ProjectsSection() {
     <section id="projects" className="px-6 lg:px-10 pb-24">
       <div className="mx-auto max-w-7xl" ref={ref}>
         <div className="reveal mb-12 text-center">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Projects</span>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Featured Projects</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            Operational systems & workflow<br />
-            <span className="grad-violet">platforms built with QA thinking</span>
+            HR Technology, People Analytics<br />
+            <span className="grad-violet">& Workplace Operations Systems</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-            Real projects demonstrating workflow coordination, process validation, system monitoring, and operational automation — bridging HR operations with engineering.
+            Real-world systems built to solve HR and operations challenges — from workforce analytics and payroll automation to workplace management and process governance.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import HRAnalyticsSection from '@/components/HRAnalyticsSection';
-import QAJourneySection from '@/components/QAJourneySection';
+import LeadershipSection from '@/components/LeadershipSection';
 import SkillsSection from '@/components/SkillsSection';
 import GithubSection from '@/components/GithubSection';
 import ExperienceSection from '@/components/ExperienceSection';
@@ -33,7 +33,7 @@ export default async function Home() {
         <AboutSection />
         <ProjectsSection />
         <HRAnalyticsSection />
-        <QAJourneySection />
+        <LeadershipSection />
         <SkillsSection />
         <GithubSection repos={githubData.repos} summary={githubData.summary} />
         <ExperienceSection />

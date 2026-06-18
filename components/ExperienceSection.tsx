@@ -7,19 +7,20 @@ import { useScrollReveal } from '@/lib/useScrollReveal';
 const timeline = [
   {
     company: 'Juspay Technologies Pvt Ltd',
-    title: 'HR Admin Associate (Consultant)',
+    title: 'HR Operations Consultant',
     period: 'Jan 2026 – Present',
     type: 'Fintech · Enterprise',
     color: 'cyan',
-    impact: '1000+ employees coordinated',
+    impact: '1000+ employees supported',
     bullets: [
-      'Coordinated operational workflows for 1000+ employees across departments',
-      'Maintained 100% data accuracy across HRMS systems with zero discrepancies',
-      'Reduced onboarding process delays by 20% through workflow redesign',
-      'Built operational dashboards for real-time workforce reporting',
-      'Managed cross-functional coordination between HR, IT, and Facilities',
-      'Standardized process documentation and SOPs for scalable operations',
-      'Validated payroll data and ensured compliance with reporting standards',
+      'Support HR Operations for a workforce of 1000+ employees across departments',
+      'Manage employee lifecycle operations including onboarding and offboarding',
+      'Maintain 100% workforce data accuracy across HR systems',
+      'Build operational dashboards and workforce reporting solutions',
+      'Coordinate workplace planning and infrastructure readiness',
+      'Partner with HR, IT, Facilities, Security, and Leadership teams',
+      'Drive process improvement initiatives and workflow optimization',
+      'Support employee engagement and workplace experience programs',
     ],
   },
   {
@@ -28,26 +29,12 @@ const timeline = [
     period: 'Jun 2024 – Jun 2025',
     type: 'Startup · Operations',
     color: 'violet',
-    impact: '50% faster onboarding process',
+    impact: '50% faster onboarding',
     bullets: [
-      'Built operational processes and tracking systems from the ground up',
-      'Redesigned onboarding workflows, reducing delays by 50%',
-      'Managed end-to-end recruitment coordination and candidate tracking',
-      'Designed attendance and performance monitoring systems',
-      'Coordinated payroll processing and operational reporting',
-    ],
-  },
-  {
-    company: 'Varun Motors Pvt Ltd',
-    title: 'HR Recruiter (Contract)',
-    period: 'Jul 2025 – Sep 2025',
-    type: 'Automotive · Coordination',
-    color: 'blue',
-    impact: 'Candidate pipeline built',
-    bullets: [
-      'Executed full-cycle recruitment coordination across multiple roles',
-      'Built and maintained structured candidate pipeline tracking',
-      'Coordinated interview scheduling and hiring logistics',
+      'Built HR operations processes and tracking systems from the ground up',
+      'Managed recruitment, onboarding, attendance, and documentation end-to-end',
+      'Reduced onboarding delays by 50% through workflow redesign',
+      'Designed workforce tracking and reporting systems',
     ],
   },
   {
@@ -58,10 +45,23 @@ const timeline = [
     color: 'emerald',
     impact: 'Full statutory compliance',
     bullets: [
-      'Managed full recruitment lifecycle from sourcing through onboarding',
-      'Maintained employee records and system data with high accuracy',
+      'Managed recruitment operations and full employee lifecycle',
+      'Processed payroll and maintained accurate attendance records',
       'Ensured PF/ESI statutory compliance and audit-ready documentation',
-      'Optimized hiring coordination for faster time-to-fill',
+      'Maintained employee records across HR systems with high accuracy',
+    ],
+  },
+  {
+    company: 'Varun Motors Pvt Ltd',
+    title: 'HR Recruiter',
+    period: 'Jul 2025 – Sep 2025',
+    type: 'Automotive · Coordination',
+    color: 'blue',
+    impact: 'Candidate pipeline built',
+    bullets: [
+      'Managed full recruitment lifecycle from sourcing through onboarding',
+      'Coordinated candidate pipelines and structured tracking',
+      'Supported workforce planning initiatives',
     ],
   },
 ];
@@ -81,13 +81,13 @@ export default function ExperienceSection() {
       <div className="mx-auto max-w-5xl" ref={ref}>
 
         <div className="reveal mb-12">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Experience</span>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Professional Experience</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            Workflow coordination &<br />
-            <span className="grad-cyan">operational systems experience</span>
+            HR Operations &<br />
+            <span className="grad-cyan">People Operations Experience</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl">
-            1.7+ years of process management, workflow coordination, and operational reporting across fintech, automotive, and startup environments.
+            2+ years of HR operations, workforce management, and people operations experience across fintech, automotive, and startup environments.
           </p>
         </div>
 

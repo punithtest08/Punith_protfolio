@@ -6,30 +6,28 @@ import { TrendingUp, Users, CheckCircle, BarChart3, Activity, Database, FileChec
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const kpis = [
-  { label: 'Workforce Coverage', value: 100, unit: '%', color: '#22d3ee', icon: Users },
-  { label: 'HRMS Accuracy', value: 100, unit: '%', color: '#10b981', icon: CheckCircle },
-  { label: 'Onboarding Speed', value: 50, unit: '% faster', color: '#a78bfa', icon: TrendingUp },
-  { label: 'Payroll Validation', value: 98, unit: '%', color: '#f59e0b', icon: FileCheck },
+  { label: 'Workforce Coverage', value: 100, unit: '%',        color: '#22d3ee', icon: Users       },
+  { label: 'HRMS Accuracy',      value: 100, unit: '%',        color: '#10b981', icon: CheckCircle },
+  { label: 'Onboarding Speed',   value: 50,  unit: '% faster', color: '#a78bfa', icon: TrendingUp  },
+  { label: 'Payroll Validation', value: 98,  unit: '%',        color: '#f59e0b', icon: FileCheck   },
 ];
 
 const pipelineItems = [
-  { label: 'Recruitment Pipeline', value: 87, color: '#22d3ee' },
+  { label: 'Recruitment Pipeline',  value: 87,  color: '#22d3ee' },
   { label: 'Attendance Monitoring', value: 100, color: '#10b981' },
-  { label: 'Employee Lifecycle', value: 92, color: '#a78bfa' },
-  { label: 'HRMS Health', value: 100, color: '#22d3ee' },
-  { label: 'Compliance Score', value: 95, color: '#f59e0b' },
-  { label: 'Payroll Accuracy', value: 100, color: '#10b981' },
+  { label: 'Employee Lifecycle',    value: 92,  color: '#a78bfa' },
+  { label: 'HRMS Health',           value: 100, color: '#22d3ee' },
+  { label: 'Compliance Score',      value: 95,  color: '#f59e0b' },
+  { label: 'Payroll Accuracy',      value: 100, color: '#10b981' },
 ];
 
-const ALL_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-// Accuracy values for each month index (0=Jan … 11=Dec). Current month is always 100.
+const ALL_MONTHS       = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const MONTHLY_ACCURACY = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
 
 function getChartData() {
   const now          = new Date();
   const currentMonth = now.getMonth();
   const currentYear  = now.getFullYear();
-  // All rendered months are 100% — every bar is HIGH
   const bars = MONTHLY_ACCURACY.slice(0, currentMonth + 1).map((val, idx) => ({
     value: val,
     month: ALL_MONTHS[idx],
@@ -98,7 +96,6 @@ function BarChart() {
       <div ref={ref} className="flex items-end gap-1.5 h-32">
         {bars.map((bar, i) => (
           <div key={bar.month} className="flex-1 flex flex-col items-center gap-1 relative">
-            {/* "HIGH" label on every bar */}
             {visible && (
               <span
                 className="absolute -top-5 left-1/2 -translate-x-1/2 text-[9px] font-bold font-mono text-emerald-400 whitespace-nowrap"
@@ -110,16 +107,13 @@ function BarChart() {
             <div
               className="w-full rounded-t-sm"
               style={{
-                height: visible ? `${bar.value}%` : '0%',
+                height:     visible ? `${bar.value}%` : '0%',
                 background: 'linear-gradient(180deg, #10b981, #22d3ee)',
                 transition: `height 1s cubic-bezier(0.4,0,0.2,1) ${i * 0.07}s`,
-                opacity: 1,
-                boxShadow: '0 0 14px rgba(16,185,129,0.5), 0 0 4px rgba(34,211,238,0.3)',
+                boxShadow:  '0 0 14px rgba(16,185,129,0.5), 0 0 4px rgba(34,211,238,0.3)',
               }}
             />
-            <span className="text-[9px] font-mono text-emerald-400 font-bold">
-              {bar.month}
-            </span>
+            <span className="text-[9px] font-mono text-emerald-400 font-bold">{bar.month}</span>
           </div>
         ))}
       </div>
@@ -134,17 +128,23 @@ export default function HRAnalyticsSection() {
   return (
     <section id="analytics" className="px-6 lg:px-10 pb-24">
       <div className="mx-auto max-w-7xl" ref={ref}>
+
         <div className="reveal mb-12">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">HR Analytics Command Center</span>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">HR Analytics</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            Enterprise-grade workforce analytics<br />
-            <span className="grad-emerald">& operational intelligence</span>
+            Workforce analytics &<br />
+            <span className="grad-emerald">operational intelligence</span>
           </h2>
+          <p className="mt-4 text-slate-400 max-w-2xl">
+            Live performance metrics, HRMS accuracy tracking, and HR pipeline health — reflecting the operational intelligence approach applied across all HR roles.
+          </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
+
           {/* Left: Main dashboard */}
           <div className="space-y-5 reveal reveal-delay-1">
+
             {/* KPI circles */}
             <div className="glass rounded-4xl border border-white/7 p-7 shadow-panel">
               <div className="flex items-center justify-between mb-6">
@@ -179,9 +179,9 @@ export default function HRAnalyticsSection() {
             </div>
           </div>
 
-          {/* Right: Pipeline + metrics */}
+          {/* Right: Pipeline + quick stats */}
           <div className="space-y-5 reveal reveal-delay-2">
-            {/* Pipeline */}
+
             <div className="glass rounded-4xl border border-white/7 p-6 shadow-panel">
               <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-4">HR Pipeline Health</p>
               <div className="space-y-4">
@@ -212,13 +212,12 @@ export default function HRAnalyticsSection() {
               </div>
             </div>
 
-            {/* Quick stats */}
             <div className="grid grid-cols-2 gap-3">
               {[
-                { icon: Database, label: 'HRMS Systems', value: 'Managed', color: 'text-cyan-400' },
-                { icon: BarChart3, label: 'Dashboards', value: '10+ Built', color: 'text-violet-400' },
-                { icon: Clock, label: 'Onboarding', value: '50% faster', color: 'text-emerald-400' },
-                { icon: CheckCircle, label: 'Compliance', value: 'PF/ESI/A+', color: 'text-amber-400' },
+                { icon: Database,     label: 'HRMS Systems',  value: 'Managed',    color: 'text-cyan-400'    },
+                { icon: BarChart3,    label: 'Dashboards',    value: '10+ Built',  color: 'text-violet-400'  },
+                { icon: Clock,        label: 'Onboarding',    value: '50% faster', color: 'text-emerald-400' },
+                { icon: CheckCircle,  label: 'Compliance',    value: 'PF/ESI A+',  color: 'text-amber-400'   },
               ].map((s) => {
                 const Icon = s.icon;
                 return (

@@ -39,7 +39,6 @@ function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
       whileHover={{ y: -5 }}
       className="group glass rounded-3xl border border-white/7 p-5 hover:border-cyan-400/25 transition-all duration-300 block"
     >
-      {/* Header row */}
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-center gap-2.5">
           <div className="h-9 w-9 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center group-hover:bg-cyan-400/10 group-hover:border-cyan-400/20 transition">
@@ -58,10 +57,10 @@ function RepoCard({ repo, index }: { repo: GitHubRepo; index: number }) {
         <ExternalLink className="h-3.5 w-3.5 text-slate-600 group-hover:text-cyan-400 transition flex-shrink-0 mt-1" />
       </div>
 
-      {/* Description */}
-      <p className="text-xs text-slate-400 leading-relaxed mb-4">{repo.description ?? 'Workflow and operations repository.'}</p>
+      <p className="text-xs text-slate-400 leading-relaxed mb-4">
+        {repo.description ?? 'HR operations and workflow systems repository.'}
+      </p>
 
-      {/* Meta row */}
       <div className="flex items-center gap-3 text-xs text-slate-500 font-mono flex-wrap">
         {repo.language && (
           <span className="flex items-center gap-1.5">
@@ -93,8 +92,7 @@ export default function GithubSection({ repos, summary }: GithubSectionProps) {
     if (r.language) acc[r.language] = (acc[r.language] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
-  const totalLang = Object.values(langDist).reduce((a, b) => a + b, 0);
-
+  const totalLang   = Object.values(langDist).reduce((a, b) => a + b, 0);
   const privateCount = repos.filter((r) => r.isPrivate).length;
   const publicCount  = repos.length - privateCount;
 
@@ -105,23 +103,23 @@ export default function GithubSection({ repos, summary }: GithubSectionProps) {
         <div className="reveal mb-12">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">GitHub</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            Repository overview &<br />
-            <span className="grad-cyan">project portfolio</span>
+            Open source systems &<br />
+            <span className="grad-cyan">HR technology projects</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl">
             {privateCount > 0
-              ? `${repos.length} repositories total — ${publicCount} public, ${privateCount} private. Private repos are shown with real metadata.`
-              : `${repos.length} repositories covering workflow automation, QA systems, and operational platforms.`}
+              ? `${repos.length} repositories total — ${publicCount} public, ${privateCount} private. HR technology, workflow automation, and people operations platforms.`
+              : `${repos.length} repositories covering HR technology, workforce analytics, and operational systems.`}
           </p>
         </div>
 
         {/* Summary stats */}
         <div className="reveal reveal-delay-1 grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {[
-            { icon: Github, label: 'Repositories',  value: String(summary.totalRepos) },
-            { icon: Code2,  label: 'Top Language',   value: summary.topLanguage        },
-            { icon: Star,   label: 'Total Stars',    value: String(summary.stars)      },
-            { icon: Clock,  label: 'Last Push',      value: summary.lastUpdated        },
+            { icon: Github, label: 'Repositories', value: String(summary.totalRepos) },
+            { icon: Code2,  label: 'Top Language',  value: summary.topLanguage        },
+            { icon: Star,   label: 'Total Stars',   value: String(summary.stars)      },
+            { icon: Clock,  label: 'Last Push',     value: summary.lastUpdated        },
           ].map((stat) => {
             const Icon = stat.icon;
             return (
@@ -213,7 +211,7 @@ export default function GithubSection({ repos, summary }: GithubSectionProps) {
                 </div>
               </div>
               <p className="text-xs text-slate-400 leading-relaxed mb-4">
-                Building workflow automation systems, QA-oriented operational platforms, and HR engineering tools.
+                Building HR technology platforms, workforce analytics systems, and operational automation tools.
               </p>
               <div className="flex items-center gap-2 text-xs text-emerald-400 font-mono mb-4">
                 <Activity className="h-3.5 w-3.5" />

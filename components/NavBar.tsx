@@ -2,17 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap, Linkedin } from 'lucide-react';
+import { Menu, X, Briefcase, Linkedin } from 'lucide-react';
 
 const links = [
-  { label: 'About',      href: '#about'      },
-  { label: 'Projects',   href: '#projects'   },
-  { label: 'Analytics',  href: '#analytics'  },
-  { label: 'QA Journey', href: '#qa-journey' },
-  { label: 'Skills',     href: '#skills'     },
-  { label: 'GitHub',     href: '#github'     },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact',    href: '#contact'    },
+  { label: 'About',        href: '#about'        },
+  { label: 'Analytics',   href: '#analytics'    },
+  { label: 'Projects',    href: '#projects'     },
+  { label: 'Leadership',  href: '#leadership'   },
+  { label: 'Skills',      href: '#skills'       },
+  { label: 'Experience',  href: '#experience'   },
+  { label: 'Contact',     href: '#contact'      },
 ];
 
 export default function NavBar() {
@@ -37,10 +36,10 @@ export default function NavBar() {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2.5 group">
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-violet-500 shadow-glow-sm">
-              <Zap className="h-4 w-4 text-white" />
+              <Briefcase className="h-4 w-4 text-white" />
             </div>
             <span className="font-semibold text-white tracking-tight">Punith S</span>
-            <span className="hidden sm:inline text-xs text-cyan-400/70 font-mono border border-cyan-400/20 rounded-full px-2 py-0.5">v2.0</span>
+            <span className="hidden sm:inline text-xs text-cyan-400/70 font-mono border border-cyan-400/20 rounded-full px-2 py-0.5">HR Ops</span>
           </a>
 
           {/* Desktop nav */}
@@ -77,6 +76,7 @@ export default function NavBar() {
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition"
+            aria-label="Toggle navigation"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>

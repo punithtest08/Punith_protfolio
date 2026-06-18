@@ -1,48 +1,48 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Briefcase, Target, Code2, Clock, ArrowRight } from 'lucide-react';
+import { MapPin, Briefcase, Target, BarChart3, Clock, ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const stats = [
-  { label: 'Years in HR Ops',    value: '1.7+',  icon: Clock     },
-  { label: 'Employees Managed',  value: '1000+', icon: Briefcase },
-  { label: 'Process Accuracy',   value: '100%',  icon: Target    },
-  { label: 'Projects Built',     value: '5+',    icon: Code2     },
+  { label: 'Years in HR Ops',    value: '2+',    icon: Clock     },
+  { label: 'Employees Supported', value: '1000+', icon: Briefcase },
+  { label: 'HRMS Accuracy',      value: '100%',  icon: Target    },
+  { label: 'Systems Built',      value: '5+',    icon: BarChart3 },
 ];
 
 const focuses = [
   {
     icon: Briefcase,
     title: 'HR Operations',
-    desc: 'Workflow coordination, HRMS management, payroll validation, onboarding systems, and compliance tracking across enterprise environments.',
+    desc: 'Employee lifecycle management, HRMS administration, payroll coordination, onboarding systems, workforce planning, and compliance tracking across enterprise environments.',
     color: 'cyan',
   },
   {
-    icon: Target,
-    title: 'QA Engineering (Transitioning)',
-    desc: 'Learning QA fundamentals, workflow validation, test case thinking, process monitoring, and automation concepts through hands-on projects.',
+    icon: BarChart3,
+    title: 'HR Analytics & Reporting',
+    desc: 'Building workforce dashboards, KPI tracking systems, operational reporting solutions, headcount analysis, and data-driven decision support for HR leadership.',
     color: 'violet',
   },
   {
-    icon: Code2,
-    title: 'Automation & Systems',
-    desc: 'Building operational tools with JavaScript and Node.js. Exploring Python basics, CI/CD concepts, and workflow automation systems.',
+    icon: Target,
+    title: 'Process Excellence',
+    desc: 'Workflow optimization, UAT testing, process validation, SOP documentation, and continuous improvement initiatives to drive operational efficiency.',
     color: 'emerald',
   },
   {
     icon: ArrowRight,
-    title: 'Process & Reporting',
-    desc: 'Dashboard building, operational reporting, data validation, and cross-functional coordination for process-driven teams.',
+    title: 'HR Technology',
+    desc: 'Leveraging HRMS/HRIS platforms, automation tools, and operational systems to modernize HR workflows and deliver scalable employee experiences.',
     color: 'blue',
   },
 ];
 
 const colorMap: Record<string, { icon: string; border: string }> = {
-  cyan:    { icon: 'bg-cyan-400/10 border-cyan-400/20 text-cyan-400',    border: 'hover:border-cyan-400/25'    },
+  cyan:    { icon: 'bg-cyan-400/10 border-cyan-400/20 text-cyan-400',       border: 'hover:border-cyan-400/25'    },
   violet:  { icon: 'bg-violet-400/10 border-violet-400/20 text-violet-400', border: 'hover:border-violet-400/25' },
   emerald: { icon: 'bg-emerald-400/10 border-emerald-400/20 text-emerald-400', border: 'hover:border-emerald-400/25' },
-  blue:    { icon: 'bg-blue-400/10 border-blue-400/20 text-blue-400',    border: 'hover:border-blue-400/25'    },
+  blue:    { icon: 'bg-blue-400/10 border-blue-400/20 text-blue-400',       border: 'hover:border-blue-400/25'    },
 };
 
 export default function AboutSection() {
@@ -55,8 +55,8 @@ export default function AboutSection() {
         <div className="reveal mb-12">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">About</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white leading-tight">
-            HR Specialist transitioning<br />
-            <span className="grad-cyan">into QA Engineering</span>
+            Building Better People Operations<br />
+            <span className="grad-cyan">Through Systems Thinking</span>
           </h2>
         </div>
 
@@ -73,7 +73,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Punith S</h3>
-                  <p className="text-sm text-slate-400 mt-0.5">HR Specialist · Aspiring QA Engineer</p>
+                  <p className="text-sm text-slate-400 mt-0.5">HR Operations Analyst · People Operations</p>
                   <div className="flex items-center gap-1.5 mt-1.5 text-xs text-slate-500">
                     <MapPin className="h-3 w-3" />
                     Bengaluru, Karnataka, India
@@ -83,10 +83,13 @@ export default function AboutSection() {
 
               {/* Bio */}
               <p className="text-slate-300 leading-relaxed text-sm">
-                Experienced HR Operations professional with a strong background in workflow coordination, reporting systems, onboarding operations, and process optimization. Currently transitioning into QA Engineering with a focus on workflow validation, automation systems, operational dashboards, and system-oriented problem solving.
+                HR Operations professional with 2+ years of experience supporting employee lifecycle management, workplace operations, workforce analytics, onboarding, payroll coordination, and cross-functional business operations.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm mt-3">
-                Passionate about building reliable systems, improving operational efficiency, and learning modern QA, DevOps, and automation technologies. I approach every process the way an engineer approaches a system — with structure, validation, and continuous improvement.
+                My approach combines operational excellence with systems thinking. I enjoy building scalable workflows, designing reporting systems, improving employee experiences, and leveraging technology to solve organizational challenges. Currently supporting HR Operations for 1000+ employees while collaborating with Leadership, HR, IT, Facilities, Security, and Workplace teams to drive operational efficiency and workforce effectiveness.
+              </p>
+              <p className="text-slate-400 leading-relaxed text-sm mt-3">
+                Passionate about HR Technology, workforce analytics, process automation, operational intelligence, and creating systems that enable business growth.
               </p>
 
               {/* Stats */}
@@ -121,7 +124,7 @@ export default function AboutSection() {
 
           {/* Right: Focus areas */}
           <div className="space-y-4 reveal reveal-delay-2">
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">Focus Areas</p>
+            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-2">Core Focus Areas</p>
 
             {focuses.map((item, i) => {
               const Icon = item.icon;
@@ -148,11 +151,11 @@ export default function AboutSection() {
               );
             })}
 
-            {/* Transition note */}
+            {/* Value proposition */}
             <div className="glass rounded-3xl border border-violet-400/15 p-5">
-              <p className="text-xs font-mono text-violet-400/70 uppercase tracking-widest mb-2">Career Direction</p>
+              <p className="text-xs font-mono text-violet-400/70 uppercase tracking-widest mb-2">Value Proposition</p>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Combining <span className="text-cyan-400">HR operations experience</span> with a growing <span className="text-violet-400">QA engineering mindset</span> — targeting roles in <span className="text-emerald-400">QA, operations, and workflow automation</span> at technology-driven companies.
+                Combining <span className="text-cyan-400">deep HR operations experience</span> with a strong <span className="text-violet-400">analytical and systems mindset</span> — delivering <span className="text-emerald-400">measurable workforce outcomes</span> at technology-driven organizations.
               </p>
             </div>
           </div>

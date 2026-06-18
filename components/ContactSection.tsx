@@ -6,37 +6,38 @@ import { Mail, Github, Linkedin, Send, MapPin, Briefcase, MessageSquare, CheckCi
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const contactLinks = [
-  { icon: Github, label: 'GitHub', value: 'punithtest08', href: 'https://github.com/punithtest08', color: 'text-slate-300' },
-  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/punith-s-25b98a2b7', href: 'https://www.linkedin.com/in/punith-s-25b98a2b7/', color: 'text-blue-400' },
-  { icon: Mail, label: 'Email', value: 'puniths0810@gmail.com', href: 'mailto:puniths0810@gmail.com', color: 'text-cyan-400' },
+  { icon: Github,   label: 'GitHub',   value: 'punithtest08',                    href: 'https://github.com/punithtest08',               color: 'text-slate-300' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/punith-s-25b98a2b7', href: 'https://www.linkedin.com/in/punith-s-25b98a2b7/', color: 'text-blue-400'  },
+  { icon: Mail,     label: 'Email',    value: 'puniths0810@gmail.com',            href: 'mailto:puniths0810@gmail.com',                  color: 'text-cyan-400'  },
 ];
 
 const openFor = [
-  'HR Operations Roles',
-  'HR Analytics Positions',
+  'HR Operations',
+  'People Operations',
+  'HR Analytics',
+  'Workforce Planning',
+  'HR Technology',
+  'Operational Excellence',
   'HR Tech Companies',
-  'QA / QA Automation',
-  'Operations Analyst',
-  'Startup Operations',
-  'Fintech & AI Products',
+  'Fintech · Enterprise',
 ];
 
 export default function ContactSection() {
   const ref = useScrollReveal();
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [form, setForm]       = useState({ name: '', email: '', message: '' });
+  const [sent, setSent]       = useState(false);
   const [sending, setSending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError]     = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
     setError(null);
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
+      const res  = await fetch('/api/contact', {
+        method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body:    JSON.stringify(form),
       });
       const data = await res.json();
       if (res.ok) {
@@ -46,7 +47,7 @@ export default function ContactSection() {
       } else {
         setError(data.error ?? 'Failed to send. Please email puniths0810@gmail.com');
       }
-    } catch (err) {
+    } catch {
       setError('Network error. Please email puniths0810@gmail.com');
     } finally {
       setSending(false);
@@ -56,18 +57,20 @@ export default function ContactSection() {
   return (
     <section id="contact" className="px-6 lg:px-10 pb-24">
       <div className="mx-auto max-w-7xl" ref={ref}>
+
         <div className="reveal mb-12 text-center">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Contact Panel</span>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Get In Touch</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            Let's build intelligent<br />
-            <span className="grad-violet">people operations together</span>
+            Let's Build Better<br />
+            <span className="grad-violet">People Operations Together</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-xl mx-auto">
-            Available for HR operations, analytics systems, HR tech teams, and AI workflow projects.
+            Open to opportunities in HR Operations, People Operations, HR Analytics, Workforce Planning, HR Technology, and Operational Excellence.
           </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+
           {/* Left: Contact form */}
           <div className="reveal reveal-delay-1 glass rounded-4xl border border-white/7 p-7 shadow-panel">
             <div className="flex items-center gap-3 mb-6">
@@ -94,6 +97,7 @@ export default function ContactSection() {
                       type="text"
                       required
                       value={form.name}
+                      maxLength={100}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="Your name"
                       className="w-full rounded-2xl bg-black/30 border border-white/8 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400/40 transition font-mono"
@@ -105,6 +109,7 @@ export default function ContactSection() {
                       type="email"
                       required
                       value={form.email}
+                      maxLength={150}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="your@email.com"
                       className="w-full rounded-2xl bg-black/30 border border-white/8 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400/40 transition font-mono"
@@ -117,8 +122,9 @@ export default function ContactSection() {
                     required
                     rows={5}
                     value={form.message}
+                    maxLength={2000}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="Tell me about the role or project..."
+                    placeholder="Tell me about the role or opportunity..."
                     className="w-full rounded-2xl bg-black/30 border border-white/8 px-4 py-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400/40 transition font-mono resize-none"
                   />
                 </div>
@@ -141,6 +147,7 @@ export default function ContactSection() {
 
           {/* Right: Info panel */}
           <div className="space-y-5 reveal reveal-delay-2">
+
             {/* Availability */}
             <div className="glass rounded-4xl border border-emerald-400/15 p-6 shadow-panel">
               <div className="flex items-center gap-3 mb-4">
@@ -148,11 +155,11 @@ export default function ContactSection() {
                 <p className="text-sm font-semibold text-emerald-400">Available for Opportunities</p>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Open to full-time roles in HR operations, analytics, and QA entry positions.
+                Open to full-time roles in HR Operations, People Operations, HR Analytics, HR Technology, and Workforce Excellence.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-500 font-mono">
                 <MapPin className="h-3.5 w-3.5" />
-                Bengaluru, India · Remote OK
+                Bengaluru, India · Remote & Hybrid OK
               </div>
             </div>
 
@@ -194,8 +201,6 @@ export default function ContactSection() {
                   );
                 })}
               </div>
-
-
             </div>
           </div>
         </div>
