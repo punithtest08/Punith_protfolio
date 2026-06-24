@@ -7,20 +7,22 @@ import { useScrollReveal } from '@/lib/useScrollReveal';
 const timeline = [
   {
     company: 'Juspay Technologies Pvt Ltd',
-    title: 'HR Operations Consultant',
+    title: 'People Operations & HR Operations Consultant',
     period: 'Jan 2026 – Present',
     type: 'Fintech · Enterprise',
     color: 'cyan',
     impact: '1000+ employees supported',
     bullets: [
-      'Support HR Operations for a workforce of 1000+ employees across departments',
-      'Manage employee lifecycle operations including onboarding and offboarding',
-      'Maintain 100% workforce data accuracy across HR systems',
-      'Build operational dashboards and workforce reporting solutions',
-      'Coordinate workplace planning and infrastructure readiness',
-      'Partner with HR, IT, Facilities, Security, and Leadership teams',
-      'Drive process improvement initiatives and workflow optimization',
-      'Support employee engagement and workplace experience programs',
+      'Support HR Operations for a workforce of 1000+ employees',
+      'Partner with leadership on workforce and people initiatives',
+      'Support performance management discussions and cycles',
+      'Participate in workforce planning and org growth initiatives',
+      'Contribute to talent reviews and succession planning activities',
+      'Support employee relations and employee experience programs',
+      'Build workforce reporting and people analytics dashboards',
+      'Collaborate with HR, IT, Workplace, Facilities, Security, and business leaders',
+      'Drive process improvement and organizational effectiveness initiatives',
+      'Support cross-functional business and people strategy projects',
     ],
   },
   {
@@ -83,11 +85,11 @@ export default function ExperienceSection() {
         <div className="reveal mb-12">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Professional Experience</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            HR Operations &<br />
-            <span className="grad-cyan">People Operations Experience</span>
+            People Operations &<br />
+            <span className="grad-cyan">HR Business Partnering Journey</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl">
-            2+ years of HR operations, workforce management, and people operations experience across fintech, automotive, and startup environments.
+            2+ years of people operations, HR business partnering, and workforce management experience across fintech, automotive, and startup environments.
           </p>
         </div>
 

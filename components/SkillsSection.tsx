@@ -7,82 +7,50 @@ const skillGroups = [
   {
     label: 'People Operations',
     color: '#22d3ee',
-    skills: [
-      'HR Operations',
-      'Employee Lifecycle Management',
-      'Workforce Planning',
-      'Employee Experience',
-      'HR Compliance',
-    ],
+    skills: ['Employee Lifecycle Management','Employee Experience','Workforce Planning','HR Operations','HR Compliance'],
   },
   {
-    label: 'Analytics & Reporting',
+    label: 'HR Business Partnering',
     color: '#a78bfa',
-    skills: [
-      'HR Analytics',
-      'Workforce Reporting',
-      'Dashboard Development',
-      'KPI Tracking',
-      'Data Visualization',
-    ],
+    skills: ['Performance Management','Talent Reviews','Succession Planning','Employee Relations','Leadership Partnership'],
   },
   {
-    label: 'Process Excellence',
+    label: 'People Analytics',
     color: '#10b981',
-    skills: [
-      'Process Improvement',
-      'Workflow Optimization',
-      'UAT Testing',
-      'Process Validation',
-      'Documentation',
-    ],
+    skills: ['HR Analytics','Workforce Analytics','Social Network Analysis','Dashboard Development','Data Visualization'],
+  },
+  {
+    label: 'Org Effectiveness',
+    color: '#f59e0b',
+    skills: ['Organizational Design','Collaboration Analytics','Workforce Intelligence','Change Management','Team Effectiveness'],
   },
   {
     label: 'Technology',
-    color: '#f59e0b',
-    skills: [
-      'Google Sheets',
-      'Advanced Excel',
-      'Google Apps Script',
-      'JavaScript',
-      'Node.js',
-      'APIs',
-      'HRMS / HRIS',
-    ],
-  },
-  {
-    label: 'Business Skills',
     color: '#3b82f6',
-    skills: [
-      'Stakeholder Management',
-      'Cross-functional Collaboration',
-      'Vendor Management',
-      'Project Coordination',
-      'Communication',
-    ],
+    skills: ['HRMS / HRIS','Advanced Excel','Google Sheets','Google Apps Script','Automation'],
   },
 ];
 
 const hrProficiency = [
-  { name: 'HR Operations',              level: 95 },
-  { name: 'Employee Lifecycle Mgmt',    level: 92 },
-  { name: 'HRMS / HRIS',                level: 90 },
-  { name: 'Payroll Coordination',       level: 88 },
-  { name: 'Workforce Analytics',        level: 85 },
-  { name: 'Process Optimization',       level: 87 },
-  { name: 'Compliance Management',      level: 90 },
-  { name: 'Dashboard Reporting',        level: 83 },
+  { name: 'People Operations',         level: 95 },
+  { name: 'Employee Lifecycle Mgmt',   level: 92 },
+  { name: 'HRMS / HRIS',               level: 90 },
+  { name: 'Workforce Planning',        level: 82 },
+  { name: 'HR Business Partnering',    level: 80 },
+  { name: 'Performance Management',    level: 78 },
+  { name: 'Compliance Management',     level: 90 },
+  { name: 'Employee Experience',       level: 88 },
 ];
 
 const techProficiency = [
-  { name: 'Google Sheets / Excel',      level: 92 },
-  { name: 'HR Analytics & Reporting',   level: 88 },
-  { name: 'Process Validation / UAT',   level: 85 },
-  { name: 'JavaScript / Node.js',       level: 75 },
-  { name: 'HRMS Systems',               level: 90 },
-  { name: 'Workflow Automation',        level: 80 },
-  { name: 'Dashboard Development',      level: 82 },
-  { name: 'Documentation',              level: 95 },
+  { name: 'People Analytics',          level: 85 },
+  { name: 'Social Network Analysis',   level: 80 },
+  { name: 'Workforce Intelligence',    level: 82 },
+  { name: 'Dashboard Development',     level: 85 },
+  { name: 'Google Sheets / Excel',     level: 92 },
+  { name: 'HRMS Systems',              level: 90 },
+  { name: 'Org Effectiveness',         level: 78 },
+  { name: 'Stakeholder Management',    level: 88 },
 ];
 
 const techStack = [
@@ -102,13 +70,13 @@ const techStack = [
 
 const softSkills = [
   'Stakeholder Management',
+  'Strategic Thinking',
   'Cross-team Collaboration',
   'Process Ownership',
   'Analytical Mindset',
   'Attention to Detail',
-  'Systems Thinking',
-  'Documentation',
-  'Continuous Improvement',
+  'Leadership Partnership',
+  'Continuous Learning',
 ];
 
 function SkillBar({ name, level, delay }: { name: string; level: number; delay: number }) {
@@ -145,8 +113,8 @@ export default function SkillsSection() {
         <div className="reveal mb-12">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Skills</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
-            Comprehensive skill set across<br />
-            <span className="grad-violet">HR operations & people analytics</span>
+            People expertise across<br />
+            <span className="grad-violet">HRBP, analytics & org effectiveness</span>
           </h2>
         </div>
 
@@ -176,7 +144,7 @@ export default function SkillsSection() {
         {/* Proficiency bars */}
         <div className="grid gap-6 lg:grid-cols-2 mb-6">
           <div className="glass rounded-4xl border border-white/7 p-7 shadow-panel reveal reveal-delay-2">
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-5">HR & People Operations Proficiency</p>
+            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-5">People Operations & HRBP Proficiency</p>
             <div className="space-y-3.5">
               {hrProficiency.map((skill, i) => (
                 <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={i * 0.05} />
@@ -185,7 +153,7 @@ export default function SkillsSection() {
           </div>
 
           <div className="glass rounded-4xl border border-white/7 p-7 shadow-panel reveal reveal-delay-3">
-            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-5">Analytics & Technology Proficiency</p>
+            <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-5">People Analytics & Technology Proficiency</p>
             <div className="space-y-3.5">
               {techProficiency.map((skill, i) => (
                 <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={i * 0.05} />

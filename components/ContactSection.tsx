@@ -13,13 +13,13 @@ const contactLinks = [
 ];
 
 const openFor = [
-  'HR Operations',
   'People Operations',
-  'HR Analytics',
+  'HR Business Partnering',
   'Workforce Planning',
+  'People Analytics',
+  'Organizational Effectiveness',
   'HR Technology',
-  'Operational Excellence',
-  'HR Tech Companies',
+  'HRBP Roles',
   'Fintech · Enterprise',
 ];
 
@@ -63,10 +63,10 @@ export default function ContactSection() {
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Get In Touch</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
             Let's Build Better<br />
-            <span className="grad-violet">People Operations Together</span>
+            <span className="grad-violet">Organizations Together</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-xl mx-auto">
-            Open to opportunities in HR Operations, People Operations, HR Analytics, Workforce Planning, HR Technology, and Operational Excellence.
+            Open to opportunities in People Operations, HR Business Partnering, Workforce Planning, People Analytics, Organizational Effectiveness, and HR Technology.
           </p>
         </div>
 
@@ -156,7 +156,7 @@ export default function ContactSection() {
                 <p className="text-sm font-semibold text-emerald-400">Available for Opportunities</p>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Open to full-time roles in HR Operations, People Operations, HR Analytics, HR Technology, and Workforce Excellence.
+                Open to full-time roles in People Operations, HR Business Partnering, People Analytics, Workforce Planning, Organizational Effectiveness, and HR Technology.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-500 font-mono">
                 <MapPin className="h-3.5 w-3.5" />

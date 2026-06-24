@@ -2,13 +2,15 @@ import { getGithubData } from '@/lib/github';
 import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
-import ProjectsSection from '@/components/ProjectsSection';
+import CoreFocusSection from '@/components/CoreFocusSection';
 import HRAnalyticsSection from '@/components/HRAnalyticsSection';
-import LeadershipSection from '@/components/LeadershipSection';
-import SkillsSection from '@/components/SkillsSection';
-import GithubSection from '@/components/GithubSection';
+import OrgEffectivenessSection from '@/components/OrgEffectivenessSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import StrategicInitiativesSection from '@/components/StrategicInitiativesSection';
 import ExperienceSection from '@/components/ExperienceSection';
-import AchievementsSection from '@/components/AchievementsSection';
+import SkillsSection from '@/components/SkillsSection';
+import BusinessImpactSection from '@/components/BusinessImpactSection';
+import GithubSection from '@/components/GithubSection';
 import ContactSection from '@/components/ContactSection';
 import FooterSection from '@/components/FooterSection';
 
@@ -19,7 +21,6 @@ export default async function Home() {
 
   return (
     <main className="relative min-h-screen bg-surface overflow-x-hidden">
-      {/* Global ambient background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="blob-cyan w-[600px] h-[600px] -top-40 -left-40 opacity-60" />
         <div className="blob-violet w-[500px] h-[500px] top-1/3 -right-40 opacity-50" />
@@ -31,13 +32,15 @@ export default async function Home() {
         <NavBar />
         <HeroSection />
         <AboutSection />
-        <ProjectsSection />
+        <CoreFocusSection />
         <HRAnalyticsSection />
-        <LeadershipSection />
-        <SkillsSection />
-        <GithubSection repos={githubData.repos} summary={githubData.summary} />
+        <OrgEffectivenessSection />
+        <ProjectsSection />
+        <StrategicInitiativesSection />
         <ExperienceSection />
-        <AchievementsSection />
+        <SkillsSection />
+        <BusinessImpactSection />
+        <GithubSection repos={githubData.repos} summary={githubData.summary} />
         <ContactSection />
         <FooterSection />
       </div>

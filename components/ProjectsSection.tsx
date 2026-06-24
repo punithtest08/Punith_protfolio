@@ -260,10 +260,10 @@ export default function ProjectsSection() {
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-400/70">Featured Projects</span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white">
             HR Technology, People Analytics<br />
-            <span className="grad-violet">& Workplace Operations Systems</span>
+            <span className="grad-violet">& Organizational Effectiveness Systems</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-            Real-world systems built to solve HR and operations challenges — from workforce analytics and payroll automation to workplace management and process governance.
+            Real-world systems built to solve people, workforce, and organizational challenges — from workforce intelligence and SNA dashboards to HR automation and workplace management.
           </p>
         </div>
 

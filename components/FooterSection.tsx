@@ -6,9 +6,9 @@ const footerLinks = [
   { label: 'About',       href: '#about'       },
   { label: 'Analytics',  href: '#analytics'   },
   { label: 'Projects',   href: '#projects'    },
-  { label: 'Leadership', href: '#leadership'  },
-  { label: 'Skills',     href: '#skills'      },
   { label: 'Experience', href: '#experience'  },
+  { label: 'Skills',     href: '#skills'      },
+  { label: 'Impact',     href: '#impact'      },
   { label: 'Contact',    href: '#contact'     },
 ];
 
@@ -25,7 +25,7 @@ export default function FooterSection() {
             <Briefcase className="h-3.5 w-3.5 text-white" />
           </div>
           <span className="font-semibold text-white text-sm">Punith S</span>
-          <span className="text-xs text-slate-600 font-mono">· HR Operations & People Analytics</span>
+          <span className="text-xs text-slate-600 font-mono">· People Operations & Workforce Analytics</span>
         </div>
 
         {/* Links */}
