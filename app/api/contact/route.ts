@@ -1,37 +1,48 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const sanitize = (s: string) =>
+  s.replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;'}[c]!));
 
 export async function POST(req: Request) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ error: 'Contact service not configured.' }, { status: 503 });
+  }
+
   try {
     const { name, email, message } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
     }
+    if (name.length > 100 || email.length > 150 || message.length > 2000) {
+      return NextResponse.json({ error: 'Input too long.' }, { status: 400 });
+    }
+
+    const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: process.env.CONTACT_EMAIL ?? 'puniths0810@gmail.com',
+      to: process.env.CONTACT_EMAIL ?? 'punithshr2708@gmail.com',
       replyTo: email,
-      subject: `New message from ${name} — Portfolio`,
+      subject: `New message from ${sanitize(name)} — Portfolio`,
       html: `
         <div style="font-family:Inter,sans-serif;max-width:600px;margin:0 auto;background:#04060c;color:#e2eeff;padding:32px;border-radius:16px;border:1px solid rgba(34,211,238,0.15);">
           <h2 style="color:#22d3ee;margin:0 0 24px;">New Portfolio Message</h2>
           <table style="width:100%;border-collapse:collapse;">
             <tr>
               <td style="padding:8px 0;color:#94a3b8;font-size:13px;width:80px;">Name</td>
-              <td style="padding:8px 0;color:#fff;font-size:14px;">${name}</td>
+              <td style="padding:8px 0;color:#fff;font-size:14px;">${sanitize(name)}</td>
             </tr>
             <tr>
               <td style="padding:8px 0;color:#94a3b8;font-size:13px;">Email</td>
-              <td style="padding:8px 0;color:#22d3ee;font-size:14px;">${email}</td>
+              <td style="padding:8px 0;color:#22d3ee;font-size:14px;">${sanitize(email)}</td>
             </tr>
           </table>
           <hr style="border:none;border-top:1px solid rgba(255,255,255,0.08);margin:20px 0;" />
           <p style="color:#94a3b8;font-size:13px;margin:0 0 8px;">Message</p>
-          <p style="color:#e2eeff;font-size:15px;line-height:1.7;margin:0;white-space:pre-wrap;">${message}</p>
+          <p style="color:#e2eeff;font-size:15px;line-height:1.7;margin:0;white-space:pre-wrap;">${sanitize(message)}</p>
           <hr style="border:none;border-top:1px solid rgba(255,255,255,0.08);margin:24px 0;" />
           <p style="color:#475569;font-size:12px;margin:0;">Sent from your portfolio contact form</p>
         </div>
