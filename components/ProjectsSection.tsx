@@ -108,7 +108,7 @@ const projects = [
       'Automated data cleanup',
     ],
     github: 'https://github.com/punithtest08/VMS',
-    status: 'Deployed · Render',
+    status: 'Deployed',
   },
   {
     id: 'veribuddy',
@@ -134,7 +134,7 @@ const projects = [
       'Audit trail for all actions',
     ],
     github: 'https://github.com/punithtest08',
-    status: 'Deployed · Render',
+    status: 'Deployed',
   },
 ];
 
