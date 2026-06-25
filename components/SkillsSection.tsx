@@ -32,25 +32,25 @@ const skillGroups = [
 ];
 
 const hrProficiency = [
-  { name: 'People Operations',         level: 95 },
-  { name: 'Employee Lifecycle Mgmt',   level: 92 },
-  { name: 'HRMS / HRIS',               level: 90 },
-  { name: 'Workforce Planning',        level: 82 },
-  { name: 'HR Business Partnering',    level: 80 },
-  { name: 'Performance Management',    level: 78 },
-  { name: 'Compliance Management',     level: 90 },
-  { name: 'Employee Experience',       level: 88 },
+  { name: 'People Operations',         level: 98 },
+  { name: 'Employee Lifecycle Mgmt',   level: 97 },
+  { name: 'HRMS / HRIS',               level: 95 },
+  { name: 'Workforce Planning',        level: 93 },
+  { name: 'HR Business Partnering',    level: 94 },
+  { name: 'Performance Management',    level: 92 },
+  { name: 'Compliance Management',     level: 95 },
+  { name: 'Employee Experience',       level: 96 },
 ];
 
 const techProficiency = [
-  { name: 'People Analytics',          level: 85 },
-  { name: 'Social Network Analysis',   level: 80 },
-  { name: 'Workforce Intelligence',    level: 82 },
-  { name: 'Dashboard Development',     level: 85 },
-  { name: 'Google Sheets / Excel',     level: 92 },
-  { name: 'HRMS Systems',              level: 90 },
-  { name: 'Org Effectiveness',         level: 78 },
-  { name: 'Stakeholder Management',    level: 88 },
+  { name: 'People Analytics',          level: 94 },
+  { name: 'Social Network Analysis',   level: 92 },
+  { name: 'Workforce Intelligence',    level: 93 },
+  { name: 'Dashboard Development',     level: 94 },
+  { name: 'Google Sheets / Excel',     level: 97 },
+  { name: 'HRMS Systems',              level: 95 },
+  { name: 'Org Effectiveness',         level: 92 },
+  { name: 'Stakeholder Management',    level: 96 },
 ];
 
 const techStack = [

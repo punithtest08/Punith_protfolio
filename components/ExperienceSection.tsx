@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Building2, Calendar, ChevronRight } from 'lucide-react';
+import { totalExperienceMonths, formatExperience } from '@/lib/experience';
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const timeline = [
@@ -89,7 +90,7 @@ export default function ExperienceSection() {
             <span className="grad-cyan">HR Business Partnering Journey</span>
           </h2>
           <p className="mt-4 text-slate-400 max-w-2xl">
-            2+ years of people operations, HR business partnering, and workforce management experience across fintech, automotive, and startup environments.
+            {formatExperience(totalExperienceMonths).label} of people operations, HR business partnering, and workforce management experience across fintech, automotive, and startup environments.
           </p>
         </div>
 

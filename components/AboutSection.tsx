@@ -5,7 +5,7 @@ import { MapPin, Users, BarChart3, Network, Briefcase, Clock } from 'lucide-reac
 import { useScrollReveal } from '@/lib/useScrollReveal';
 
 const stats = [
-  { label: 'Years Experience',      value: '2+',    icon: Clock     },
+  { label: 'Years Experience', value: '2+', icon: Clock },
   { label: 'Employees Supported',   value: '1000+', icon: Users     },
   { label: 'Analytics Dashboards',  value: '10+',   icon: BarChart3 },
   { label: 'Systems Built',         value: '5+',    icon: Network   },
