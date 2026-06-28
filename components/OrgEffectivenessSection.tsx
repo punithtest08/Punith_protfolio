@@ -71,40 +71,82 @@ export default function OrgEffectivenessSection() {
               <div className="relative z-10">
                 <p className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-4">Social Network Analysis</p>
 
-                {/* Abstract network nodes */}
-                <div className="relative h-48 mb-6">
-                  {[
-                    { x: '50%', y: '20%', size: 'h-8 w-8', color: 'bg-cyan-400/80', label: 'Hub' },
-                    { x: '25%', y: '50%', size: 'h-6 w-6', color: 'bg-violet-400/70', label: 'Bridge' },
-                    { x: '75%', y: '45%', size: 'h-6 w-6', color: 'bg-emerald-400/70', label: 'Connector' },
-                    { x: '15%', y: '80%', size: 'h-4 w-4', color: 'bg-blue-400/60', label: '' },
-                    { x: '40%', y: '75%', size: 'h-5 w-5', color: 'bg-cyan-400/50', label: '' },
-                    { x: '65%', y: '80%', size: 'h-4 w-4', color: 'bg-violet-400/50', label: '' },
-                    { x: '85%', y: '25%', size: 'h-4 w-4', color: 'bg-emerald-400/50', label: '' },
-                    { x: '30%', y: '25%', size: 'h-4 w-4', color: 'bg-blue-400/50', label: '' },
-                  ].map((node, i) => (
-                    <motion.div key={i}
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1, type: 'spring' }}
-                      className={`absolute ${node.size} ${node.color} rounded-full flex items-center justify-center -translate-x-1/2 -translate-y-1/2`}
-                      style={{ left: node.x, top: node.y, boxShadow: '0 0 12px currentColor' }}>
-                      {node.label && <span className="text-[8px] font-bold text-white">{node.label}</span>}
-                    </motion.div>
-                  ))}
-                  {/* Connection lines SVG */}
-                  <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }}>
+                {/* Animated Network Diagram */}
+                <div className="relative h-56 mb-6">
+                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet" style={{ pointerEvents: 'none' }}>
+                    {/* Edges */}
                     {[
-                      ['50%','20%','25%','50%'],['50%','20%','75%','45%'],['50%','20%','30%','25%'],
-                      ['50%','20%','85%','25%'],['25%','50%','15%','80%'],['25%','50%','40%','75%'],
-                      ['75%','45%','65%','80%'],['75%','45%','85%','25%'],
+                      [200,40, 100,100],[200,40, 300,100],[200,40, 160,130],[200,40, 240,130],
+                      [100,100, 50,160],[100,100, 160,130],[300,100, 350,160],[300,100, 240,130],
+                      [160,130, 120,180],[240,130, 280,180],[100,100, 300,100],
                     ].map(([x1,y1,x2,y2], i) => (
-                      <motion.line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
-                        stroke="rgba(34,211,238,0.15)" strokeWidth="1"
-                        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }} transition={{ delay: 0.8 + i * 0.05 }} />
+                      <motion.line key={i}
+                        x1={x1} y1={y1} x2={x2} y2={y2}
+                        stroke="rgba(34,211,238,0.18)" strokeWidth="1.2" strokeLinecap="round"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        whileInView={{ pathLength: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 + i * 0.07, duration: 0.5 }}
+                      />
                     ))}
+                    {/* Pulse rings on hub */}
+                    {[1.4, 1.8].map((scale, i) => (
+                      <motion.circle key={i} cx={200} cy={40} r={18}
+                        fill="none" stroke="rgba(34,211,238,0.12)" strokeWidth="1"
+                        initial={{ scale: 1, opacity: 0.6 }}
+                        animate={{ scale, opacity: 0 }}
+                        transition={{ duration: 2, delay: i * 1, repeat: Infinity, ease: 'easeOut' }}
+                        style={{ transformOrigin: '200px 40px' }}
+                      />
+                    ))}
+                    {/* Nodes */}
+                    {[
+                      { cx: 200, cy: 40,  r: 14, fill: 'rgba(34,211,238,0.85)',   glow: '#22d3ee', label: 'Hub',       labelDy: -20 },
+                      { cx: 100, cy: 100, r: 10, fill: 'rgba(167,139,250,0.80)',  glow: '#a78bfa', label: 'Bridge',    labelDy: -16 },
+                      { cx: 300, cy: 100, r: 10, fill: 'rgba(16,185,129,0.80)',   glow: '#10b981', label: 'Connector', labelDy: -16 },
+                      { cx: 160, cy: 130, r:  7, fill: 'rgba(96,165,250,0.70)',   glow: '#60a5fa', label: '',          labelDy: 0   },
+                      { cx: 240, cy: 130, r:  7, fill: 'rgba(167,139,250,0.60)',  glow: '#a78bfa', label: '',          labelDy: 0   },
+                      { cx:  50, cy: 160, r:  5, fill: 'rgba(34,211,238,0.50)',   glow: '#22d3ee', label: '',          labelDy: 0   },
+                      { cx: 350, cy: 160, r:  5, fill: 'rgba(16,185,129,0.50)',   glow: '#10b981', label: '',          labelDy: 0   },
+                      { cx: 120, cy: 180, r:  5, fill: 'rgba(96,165,250,0.45)',   glow: '#60a5fa', label: '',          labelDy: 0   },
+                      { cx: 280, cy: 180, r:  5, fill: 'rgba(34,211,238,0.45)',   glow: '#22d3ee', label: '',          labelDy: 0   },
+                    ].map((node, i) => (
+                      <g key={i}>
+                        <motion.circle
+                          cx={node.cx} cy={node.cy} r={node.r}
+                          fill={node.fill}
+                          initial={{ scale: 0, opacity: 0 }}
+                          whileInView={{ scale: 1, opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.1, type: 'spring', stiffness: 200 }}
+                          style={{ filter: `drop-shadow(0 0 6px ${node.glow})`, transformOrigin: `${node.cx}px ${node.cy}px` }}
+                        />
+                        {node.label && (
+                          <motion.text
+                            x={node.cx} y={node.cy + node.labelDy}
+                            textAnchor="middle" fontSize="8" fontWeight="700"
+                            fill="rgba(255,255,255,0.85)" fontFamily="monospace"
+                            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }} transition={{ delay: 0.8 + i * 0.1 }}
+                          >
+                            {node.label}
+                          </motion.text>
+                        )}
+                      </g>
+                    ))}
+                    {/* Animated travelling dot along hub→bridge edge */}
+                    <motion.circle r="2.5" fill="#22d3ee"
+                      initial={{ offsetDistance: '0%', opacity: 0.9 }}
+                      animate={{ offsetDistance: '100%', opacity: 0 }}
+                      transition={{ duration: 2, repeat: Infinity, ease: 'linear', repeatDelay: 1 }}
+                      style={{ offsetPath: 'path("M200,40 L100,100")' } as React.CSSProperties}
+                    />
+                    <motion.circle r="2.5" fill="#a78bfa"
+                      initial={{ offsetDistance: '0%', opacity: 0.9 }}
+                      animate={{ offsetDistance: '100%', opacity: 0 }}
+                      transition={{ duration: 2.4, repeat: Infinity, ease: 'linear', repeatDelay: 0.5, delay: 1 }}
+                      style={{ offsetPath: 'path("M200,40 L300,100")' } as React.CSSProperties}
+                    />
                   </svg>
                 </div>
 
