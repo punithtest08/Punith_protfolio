@@ -156,11 +156,11 @@ export default function ContactSection() {
                 <p className="text-sm font-semibold text-emerald-400">Available for Opportunities</p>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Open to full-time roles in People Operations, HR Business Partnering, People Analytics, Workforce Planning, Organizational Effectiveness, and HR Technology.
+                Open to full-time roles in People Operations, HR Business Partnering, People Analytics, Workforce Planning, Organizational Effectiveness, and HR Technology. Available for Full-time, Hybrid & Remote opportunities.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-500 font-mono">
                 <MapPin className="h-3.5 w-3.5" />
-                Bengaluru, India · Remote & Hybrid OK
+                Bengaluru, India · Full-time · Hybrid · Remote
               </div>
             </div>
 

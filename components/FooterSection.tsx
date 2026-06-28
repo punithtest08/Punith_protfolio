@@ -263,7 +263,7 @@ export default function FooterSection() {
               <span className="glow-dot-green h-2 w-2 rounded-full flex-shrink-0" />
               <div>
                 <p className="text-xs font-semibold text-emerald-400">Available</p>
-                <p className="text-[10px] text-slate-500 font-mono mt-0.5">Bengaluru · Remote OK</p>
+                <p className="text-[10px] text-slate-500 font-mono mt-0.5">Full-time · Hybrid · Remote</p>
               </div>
             </div>
           </motion.div>

@@ -107,12 +107,12 @@ export default function AboutSection() {
               <div className="glass rounded-3xl border border-white/7 p-5">
                 <p className="text-xs font-mono text-slate-500 uppercase tracking-widest">Location</p>
                 <p className="mt-2 text-base font-semibold text-white">Bengaluru, India</p>
-                <p className="text-xs text-slate-500 mt-1">Open to remote & hybrid</p>
+                <p className="text-xs text-slate-500 mt-1">Full-time · Hybrid · Remote</p>
               </div>
               <div className="glass rounded-3xl border border-emerald-400/15 p-5">
                 <p className="text-xs font-mono text-slate-500 uppercase tracking-widest">Status</p>
                 <p className="mt-2 text-base font-semibold text-emerald-400 status-online">Available</p>
-                <p className="text-xs text-slate-500 mt-1">Open to new roles</p>
+                <p className="text-xs text-slate-500 mt-1">Full-time · Hybrid · Remote</p>
               </div>
             </div>
           </div>
