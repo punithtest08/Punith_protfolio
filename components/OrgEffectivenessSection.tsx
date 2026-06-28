@@ -124,7 +124,7 @@ function NetworkDiagram() {
   );
 }
 
-
+export default function OrgEffectivenessSection() {
   const ref = useScrollReveal();
 
   return (
