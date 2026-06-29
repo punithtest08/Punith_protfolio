@@ -151,7 +151,7 @@ export default function HeroSection() {
             {/* CTAs */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
               className="flex flex-wrap gap-3">
-              <a href="/Punith_S.pdf" download="Punith_S_Resume.pdf"
+              <a href="/Punith_S.pdf" target="_blank" rel="noreferrer" download="Punith_S_Resume.pdf"
                 className="btn-magnetic inline-flex items-center gap-2.5 rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow hover:bg-cyan-400">
                 <Download className="h-4 w-4" />
                 Download Resume
