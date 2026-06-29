@@ -101,7 +101,7 @@ const quickLinks = [
 
 const connectLinks = [
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/punith-s-25b98a2b7/', external: true  },
-  { icon: Download, label: 'Resume',   href: '/Punith S.pdf',                                    external: false, download: 'Punith_S_Resume.pdf' },
+  { icon: Download, label: 'Resume',   href: '/Punith_S.pdf',                                    external: false, download: 'Punith_S_Resume.pdf' },
   { icon: Mail,     label: 'Email',    href: 'mailto:punithshr2708@gmail.com',                   external: false },
   { icon: Github,   label: 'GitHub',   href: 'https://github.com/punithtest08',                  external: true  },
 ];
